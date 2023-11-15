@@ -13,11 +13,11 @@ const Nearbyjobs = () => {
   // });
   // Details
   const [selectedJob, setSelectedJob] = useState();
-  const handleCardPress = (item) => {
+  const handleCardPress = (jobId) => {
     navigation.navigate("Details", {
-      jobId: item.job_id,
+      jobId: jobId,
     });
-    setSelectedJob(item.job_id);
+    setSelectedJob(jobId);
   };
 
   let data = [
@@ -1003,7 +1003,7 @@ const Nearbyjobs = () => {
             <NearbyJobCard
               job={job}
               key={`nearby-job-${job.job_id}`}
-              handleNavigate={handleCardPress}
+              handleNavigate={() => handleCardPress(job.job_id)}
             />
           ))
         )}
