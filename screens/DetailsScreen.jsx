@@ -22,7 +22,6 @@ export default function DetailsScreen({ route, navigation }) {
   const { data, isLoading, error, refetch } = useFetch("job-details", {
     job_id: jobId,
   });
-  console.log("data: ", data);
 
   const [activeTab, setActiveTab] = useState(tabs[0]);
   const [refreshing, setRefreshing] = useState(false);

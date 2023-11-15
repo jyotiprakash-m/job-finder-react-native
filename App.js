@@ -1,5 +1,4 @@
-import { StatusBar } from "expo-status-bar";
-import { StyleSheet, Text, View, DrawerLayoutAndroid } from "react-native";
+import { StyleSheet } from "react-native";
 import { NavigationContainer } from "@react-navigation/native";
 import { createNativeStackNavigator } from "@react-navigation/native-stack";
 import HomeScreen from "./screens/HomeScreen";
@@ -22,13 +21,17 @@ export default function App() {
             headerTitleAlign: "center",
             headerLeft: (props) => (
               <ScreenHeaderBtn
-                dimension="60%"
-                iconUrl={icons.menu}
-                onPress={() => setOpen((prevOpen) => !prevOpen)}
+                dimension="100%"
+                iconUrl={icons.back}
+                home={true}
               />
             ),
             headerRight: (props) => (
-              <ScreenHeaderBtn dimension="100%" iconUrl={images.profile} />
+              <ScreenHeaderBtn
+                dimension="100%"
+                iconUrl={images.profile}
+                home={true}
+              />
             ),
           }}
         />
@@ -39,10 +42,18 @@ export default function App() {
             title: "Details",
             headerTitleAlign: "center",
             headerLeft: (props) => (
-              <ScreenHeaderBtn dimension="60%" iconUrl={icons.menu} />
+              <ScreenHeaderBtn
+                dimension="100%"
+                iconUrl={icons.back}
+                home={false}
+              />
             ),
             headerRight: (props) => (
-              <ScreenHeaderBtn dimension="100%" iconUrl={images.profile} />
+              <ScreenHeaderBtn
+                dimension="100%"
+                iconUrl={images.profile}
+                home={false}
+              />
             ),
           }}
         />
@@ -53,10 +64,18 @@ export default function App() {
             title: "Search",
             headerTitleAlign: "center",
             headerLeft: (props) => (
-              <ScreenHeaderBtn dimension="60%" iconUrl={icons.menu} />
+              <ScreenHeaderBtn
+                dimension="100%"
+                iconUrl={icons.back}
+                home={false}
+              />
             ),
             headerRight: (props) => (
-              <ScreenHeaderBtn dimension="100%" iconUrl={images.profile} />
+              <ScreenHeaderBtn
+                dimension="100%"
+                iconUrl={images.profile}
+                home={false}
+              />
             ),
           }}
         />

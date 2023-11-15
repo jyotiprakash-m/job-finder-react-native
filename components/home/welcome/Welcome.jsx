@@ -18,7 +18,7 @@ const Welcome = ({}) => {
   const handleClick = () => {
     searchTerm &&
       navigation.navigate("Search", {
-        item: searchTerm,
+        searchTerm: searchTerm,
       });
   };
   return (
@@ -54,7 +54,7 @@ const Welcome = ({}) => {
               onPress={() => {
                 setActiveJobType(item);
                 navigation.navigate("Search", {
-                  item: item,
+                  searchTerm: item,
                 });
               }}
             >
